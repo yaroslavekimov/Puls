@@ -28,20 +28,57 @@
             color: #fff
             background-color: $main-color
     &__content
-       
+        display: none
+        justify-content: space-between
+        flex-wrap: wrap
+        &_active 
+            display: flex
     &-item
         margin-top: 75px
         width: 300px
-        height: 430px
+        height: 440px
         background-color: #ffffff
         border: 2.0px solid #e8e8e8
         padding: 20px 20px 20px 27px
+        overflow: hidden
         &__contents
             width: 50%
             margin-right: 20px
+            transform: translateX(-120%)
+            transition: 0.6s all
+            &_active
+                transform: translateX(0%)
+                margin-left: 0px
         &__list
+            transition: 0.6s all
             width: 50%
             margin-left: 20px
+            transform: translateX(0%)
+            padding-right: 20px
+            font-size: 14px
+            line-height: 1.2
+            font-weight: 300
+            color: #555555
+            list-style-type: none
+            &_active
+                transform: translateX(-110%)
+                margin-left: 0px
+                margin-right: 20px
+                padding: 0
+                padding-left: 10px
+            li 
+                position: relative
+                margin-top: 15px
+                &:nth-child(1)
+                    margin-top: 0
+                &::before
+                    content: ''
+                    position: absolute
+                    width: 5px
+                    height: 5px
+                    background-color: $main-color
+                    top: 5px
+                    left: -14px
         &__img
             display: block
             margin: 0 auto
@@ -61,21 +98,39 @@
             font-weight: 300
             color: #0d0d0d
         &__detail
-            display: block
-            margin: 0 auto
+            margin-top: 17px
             text-align: center
+            display: block
             margin-top: 17px
             font-size: 14px
             line-height: 1.2
             font-weight: 500
             text-decoration: underline
             color: $main-color
+            &:hover
+                color: $main-color
+        &__back
+            position: absolute
+            right: 50%
+            transform: translateX(50%)
+            bottom: -15px
+            display: block
+            margin-top: 17px
+            font-size: 14px
+            line-height: 1.2
+            font-weight: 500
+            text-decoration: underline
+            text-transform: uppercase
+            color: $main-color
+            &:hover
+                color: $main-color
         hr 
             border-bottom: none
             width: 260px
             height: 1px
             background-color: #e8e8e8
         &__footer
+            margin-top: 21px
             display: flex
             justify-content: space-between
             align-items: center
